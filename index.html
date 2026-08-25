@@ -306,56 +306,48 @@ nav .container {
 /* ================================
    HERO
 ================================ */
+/* ================================
+   DOWNLOAD RESUME BUTTON
+================================ */
+
 .resume-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 0.5rem;
 
-  padding: 12px 22px;
-  margin-top: 18px;
+  padding: 0.8rem 1.5rem;
 
-  background: linear-gradient(135deg, #00e5ff, #7c3aed);
-  color: #fff;
+  background: var(--primary);
+  color: #ffffff;
 
   border: none;
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
 
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 0.85rem;
+  font-weight: 600;
   text-decoration: none;
 
-  box-shadow: 0 8px 25px rgba(0, 229, 255, 0.2);
-  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(37, 99, 235, 0.2);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
   cursor: pointer;
 }
 
 .resume-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(0, 229, 255, 0.35);
+  background: var(--primary-dark);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
 }
 
 .resume-btn span {
-  font-size: 18px;
+  font-size: 1rem;
   line-height: 1;
-}
-.resume-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 20px;
-  margin-top: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 10px;
-  color: #eb1c1c;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s ease;
-}
-
-.resume-btn:hover {
-  transform: translateY(-2px);
-  background: rgba(7, 7, 7, 0.1);
 }
 
 #hero {
@@ -1634,8 +1626,8 @@ footer strong {
     <a href="mailto:mskmohan50@gmail.com" class="nav-cta">
       Hire Me
     </a>
-    <a href="/Mohan Raj G.pdf" download class="resume-btn">
-  <span>↓</span> Download Resume
+    <a href="\Mohan Raj G.pdf" download class="resume-btn">
+  <span>↓</span> My Resume
 </a>
 
   </div>
@@ -2087,6 +2079,20 @@ footer strong {
           <li>Created and integrated REST APIs for data management and service communication, improving development efficiency</li>
           <li>Participated in code reviews, testing, and performance optimisation, contributing to high-quality software releases</li>
         </ul>
+        <div class="exp-item">
+  <div class="exp-dot"></div>
+
+  <div class="exp-meta">Coimbatore · Internship</div>
+  <div class="exp-role">AI/ML Engineer Intern</div>
+  <div class="exp-company">Project Development Cell</div>
+
+  <ul class="exp-bullets">
+    <li>Developed and implemented machine learning models for real-world project requirements using Python and modern AI/ML libraries</li>
+    <li>Performed data preprocessing, feature engineering, model training, and evaluation to improve prediction accuracy and reliability</li>
+    <li>Integrated AI/ML solutions into application workflows and collaborated on testing, debugging, and performance optimisation</li>
+  </ul>
+</div>
+        
       </div>
     </div>
   </div>
@@ -2102,6 +2108,7 @@ footer strong {
       <div class="cert-card"><div class="cert-title">Full-Stack Development</div><div class="cert-issuer">Atlysbridge Solutions · Industry Training</div></div></div>
     </div>
   </div>
+
 </section>
 <section id="contact" style="border-bottom:none">
   <div class="container">
