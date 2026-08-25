@@ -80,6 +80,7 @@ a {
    NAV PROFILE
 ================================ */
 
+
 .nav-profile {
   display: flex;
   align-items: center;
@@ -305,6 +306,58 @@ nav .container {
 /* ================================
    HERO
 ================================ */
+.resume-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 12px 22px;
+  margin-top: 18px;
+
+  background: linear-gradient(135deg, #00e5ff, #7c3aed);
+  color: #fff;
+
+  border: none;
+  border-radius: 10px;
+
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+
+  box-shadow: 0 8px 25px rgba(0, 229, 255, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.resume-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 229, 255, 0.35);
+}
+
+.resume-btn span {
+  font-size: 18px;
+  line-height: 1;
+}
+.resume-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  margin-top: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  color: #eb1c1c;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.resume-btn:hover {
+  transform: translateY(-2px);
+  background: rgba(7, 7, 7, 0.1);
+}
+
 #hero {
   text-align: center;
 }
@@ -1581,6 +1634,9 @@ footer strong {
     <a href="mailto:mskmohan50@gmail.com" class="nav-cta">
       Hire Me
     </a>
+    <a href="/Mohan Raj G.pdf" download class="resume-btn">
+  <span>↓</span> Download Resume
+</a>
 
   </div>
 </nav>
@@ -1677,6 +1733,7 @@ footer strong {
         </div>
 
       </div>
+      
 
     </div>
 
