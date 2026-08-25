@@ -309,6 +309,56 @@ nav .container {
 /* ================================
    DOWNLOAD RESUME BUTTON
 ================================ */
+   .resume-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 12px 20px;
+  min-height: 44px;
+
+  background: var(--primary);
+  color: #ffffff;
+
+  border: none;
+  border-radius: 8px;
+
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+
+  text-decoration: none;
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.resume-btn span {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.resume-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.resume-btn:active {
+  transform: translateY(0);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .resume-btn {
+    width: 100%;
+    max-width: 220px;
+    padding: 13px 18px;
+    font-size: 14px;
+  }
+}
 
 .resume-btn {
   display: inline-flex;
@@ -1626,9 +1676,9 @@ footer strong {
     <a href="mailto:mskmohan50@gmail.com" class="nav-cta">
       Hire Me
     </a>
-    <a href="\Mohan Raj G.pdf" download class="resume-btn">
+    <a href="/MohanRaj G.pdf" download="Mohan Raj G.pdf" class="resume-btn">
   <span>↓</span> My Resume
-</a>
+    </a>
 
   </div>
 </nav>
