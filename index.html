@@ -1,54 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Mohan Raj G — Software Developer</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+
+<meta
+  name="description"
+  content="Mohan Raj G — Python Full-Stack Developer building full-stack applications, REST APIs, AI-powered systems, and scalable backend solutions."
+>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+>
+
 <style>
-/* ================================
-   PROFESSIONAL PORTFOLIO DESIGN
-================================ */
 
-
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* =========================================================
+   ROOT
+========================================================= */
 
 :root {
-  --bg: #ffffff;
-  --bg-soft: #f8fafc;
-  --bg-dark: #0f172a;
+  --bg: #10141a;
+  --bg-raised: #171c23;
+  --bg-raised-2: #1d232b;
 
-  --border: #e2e8f0;
-  --border-dark: #1e293b;
+  --line: #2b323b;
 
-  --text: #0f172a;
-  --text-secondary: #475569;
-  --text-muted: #64748b;
+  --ink: #eae6db;
+  --muted: #98a1ab;
 
-  --primary: #2563eb;
-  --primary-dark: #1d4ed8;
-  --primary-light: #eff6ff;
+  --amber: #e7a33e;
+  --teal: #55bfae;
 
-  --success: #16a34a;
+  --danger: #e06c75;
 
-  --font-display: "Inter", sans-serif;
-  --font-body: "Inter", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
+  --radius: 4px;
+  --wrap: 1120px;
+}
 
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 14px;
+/* =========================================================
+   RESET
+========================================================= */
 
-  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.08);
-  --shadow-md: 0 8px 25px rgba(15, 23, 42, 0.08);
-  --shadow-lg: 0 15px 40px rgba(15, 23, 42, 0.12);
+* {
+  box-sizing: border-box;
 }
 
 html {
@@ -56,2122 +57,3015 @@ html {
 }
 
 body {
-  background:
-    radial-gradient(circle at 10% 10%, rgba(37, 99, 235, 0.035), transparent 24%),
-    radial-gradient(circle at 90% 60%, rgba(14, 165, 233, 0.035), transparent 26%),
-    #87edf5;
-  color: var(--text);
-  font-family: var(--font-body);
-  line-height: 1.7;
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+
+  font-size: 16px;
+  line-height: 1.6;
+
+  overflow-x: hidden;
+
   -webkit-font-smoothing: antialiased;
 }
 
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-weight: 600;
+}
+
+p {
+  margin: 0;
+}
+
 a {
-  color: inherit;
+  color: var(--teal);
+  text-decoration: none;
 }
 
-.container {
-  max-width: 1180px;
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 3px;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.mono {
+  font-family: "IBM Plex Mono", monospace;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.wrap {
+  width: 100%;
+  max-width: var(--wrap);
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 24px;
 }
 
-/* ================================
-   NAV PROFILE
-================================ */
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
+header.site {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  background: rgba(16, 20, 26, 0.94);
+
+  backdrop-filter: blur(8px);
+
+  border-bottom: 1px solid var(--line);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 16px 0;
+}
 
 .nav-profile {
   display: flex;
   align-items: center;
-  gap: 0.7rem;
+  gap: 10px;
+
   text-decoration: none;
 }
 
-.nav-profile-image {
-  width: 42px;
-  height: 42px;
+.nav-profile img {
+  width: 40px;
+  height: 40px;
+
   object-fit: cover;
+
   border-radius: 50%;
 
-  border: 2px solid #ffffff;
-
-  box-shadow:
-    0 0 0 2px var(--primary),
-    0 4px 12px rgba(37, 99, 235, 0.18);
-
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+  border: 1px solid var(--line);
 }
 
-.nav-profile:hover .nav-profile-image {
-  transform: scale(1.06);
+.nav-mark {
+  font-family: "IBM Plex Mono", monospace;
 
-  box-shadow:
-    0 0 0 3px var(--primary),
-    0 6px 16px rgba(37, 99, 235, 0.25);
+  font-size: 15px;
+
+  color: var(--ink);
 }
 
-.nav-profile .nav-logo {
-  display: inline-block;
-}
-/* ================================
-   NAVIGATION
-================================ */
-
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(14px);
-
-  border-bottom: 1px solid rgba(226, 232, 240, 0.9);
-
-  padding: 1rem 0;
-}
-
-nav .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.nav-logo {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-}
-
-.nav-logo::after {
-  content: ".";
-  color: var(--primary);
+.nav-mark span {
+  color: var(--amber);
 }
 
 .nav-links {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
+  display: none;
+
+  gap: 26px;
+
   list-style: none;
+
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
-  position: relative;
+  color: var(--muted);
 
-  color: var(--text-secondary);
-  text-decoration: none;
-
-  font-size: 0.86rem;
-  font-weight: 500;
-
-  transition: color 0.2s ease;
-}
-
-.nav-links a::after {
-  content: "";
-
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-
-  width: 0;
-  height: 2px;
-
-  background: var(--primary);
-
-  transition: width 0.2s ease;
+  font-size: 14px;
 }
 
 .nav-links a:hover {
-  color: var(--primary);
-}
+  color: var(--ink);
 
-.nav-links a:hover::after {
-  width: 100%;
+  text-decoration: none;
 }
 
 .nav-cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: none;
 
-  background: var(--primary);
-  color: #ffffff;
+  font-family: "IBM Plex Mono", monospace;
 
-  padding: 0.55rem 1.2rem;
+  font-size: 13px;
 
-  border-radius: var(--radius-sm);
+  color: var(--bg);
 
-  font-size: 0.82rem;
-  font-weight: 600;
+  background: var(--amber);
 
-  text-decoration: none;
+  padding: 8px 14px;
 
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
-
-  transition:
-    background 0.2s ease,
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+  border-radius: var(--radius);
 }
 
 .nav-cta:hover {
-  background: var(--primary-dark);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.25);
+  text-decoration: none;
+  opacity: 0.9;
 }
 
-.menu-toggle {
-  display: none;
-
-  flex-direction: column;
-  gap: 5px;
-
+.menu-btn {
   background: none;
-  border: none;
 
-  cursor: pointer;
+  border: 1px solid var(--line);
 
-  padding: 0.4rem;
-}
+  color: var(--ink);
 
-.menu-toggle span {
-  width: 22px;
-  height: 2px;
+  width: 38px;
+  height: 38px;
 
-  background: var(--text);
+  border-radius: var(--radius);
 
-  display: block;
-
-  border-radius: 2px;
-}
-/* ================================
-   ABOUT SECTION - FULL CENTER
-================================ */
-
-#about {
-  text-align: center;
-}
-
-#about .container {
-  max-width: 1000px;
-  margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
-/* About text */
-#about .about-content {
-  width: 100%;
-  max-width: 850px;
-  margin: 0 auto 3rem;
-  text-align: center;
-}
-
-#about .section-label {
-  text-align: center;
-}
-
-#about .about-heading {
-  text-align: center;
-}
-
-#about .about-content p {
-  max-width: 800px;
-  margin: 0 auto 1.2rem;
-  text-align: center;
-}
-
-/* Education */
-#about .about-card {
-  width: 100%;
-  max-width: 700px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-#about .about-edu {
-  text-align: center;
-}
-
-#about .about-edu-item,
-#about .about-edu-sub {
-  text-align: center;
-}
-
-/* ================================
-   HERO
-================================ */
-/* ================================
-   DOWNLOAD RESUME BUTTON
-================================ */
-
-.resume-btn {
-  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-
-  padding: 0.8rem 1.5rem;
-
-  background: var(--primary);
-  color: #ffffff;
-
-  border: none;
-  border-radius: var(--radius-sm);
-
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-decoration: none;
-
-  box-shadow: 0 5px 15px rgba(37, 99, 235, 0.2);
-
-  transition:
-    background 0.2s ease,
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
 
   cursor: pointer;
 }
 
-.resume-btn:hover {
-  background: var(--primary-dark);
-  color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+.menu-btn svg {
+  width: 18px;
+  height: 18px;
 }
 
-.resume-btn span {
-  font-size: 1rem;
-  line-height: 1;
-}
-
-#hero {
-  text-align: center;
-}
-
-#hero .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.hero-title {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.hero-btns {
-  justify-content: center;
-}
-
-.hero-stats {
-  justify-content: center;
-}
-
-#hero {
-  padding: 7rem 0 6rem;
-
-  background:
-    radial-gradient(circle at 82% 18%, rgba(37, 99, 235, 0.12), transparent 28%),
-    radial-gradient(circle at 12% 75%, rgba(14, 165, 233, 0.08), transparent 30%),
-    linear-gradient(135deg, #ffffff 0%, #f8fafc 52%, #eef4ff 100%);
-
-  border-bottom: 1px solid var(--border);
-}
-
-.hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-
-  font-family: var(--font-mono);
-
-  font-size: 0.7rem;
-
-  color: var(--primary);
-
-  letter-spacing: 0.08em;
-
-  text-transform: uppercase;
-
-  background: var(--primary-light);
-
-  border: 1px solid #010305;
-
-  padding: 0.4rem 0.8rem;
-
-  border-radius: 999px;
-
-  margin-bottom: 1.5rem;
-}
-
-.hero-name {
-  font-family: var(--font-display);
-
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
-
-  line-height: 1.05;
-
-  font-weight: 800;
-
-  letter-spacing: -0.055em;
-
-  margin-bottom: 1rem;
-
-  max-width: 850px;
-}
-
-.hero-title {
-  font-size: 1.15rem;
-
-  color: var(--text-secondary);
-
-  max-width: 680px;
-
-  margin-bottom: 2rem;
-}
-
-.hero-title strong {
-  color: var(--text);
-  font-weight: 650;
-}
-
-.hero-btns {
-  display: flex;
-
-  gap: 0.8rem;
-
-  flex-wrap: wrap;
-
-  margin-bottom: 3.5rem;
-}
-
-.btn-primary,
-.btn-outline {
-  display: inline-flex;
-
-  align-items: center;
-  justify-content: center;
-
-  gap: 0.5rem;
-
-  padding: 0.8rem 1.5rem;
-
-  border-radius: var(--radius-sm);
-
-  font-size: 0.85rem;
-
-  text-decoration: none;
-
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    background 0.2s ease;
-}
-
-.btn-primary {
-  background: var(--primary);
-
-  color: #ffffff;
-
-  font-weight: 600;
-
-  box-shadow: 0 5px 15px rgba(37, 99, 235, 0.2);
-}
-
-.btn-primary:hover {
-  background: var(--primary-dark);
-
-  transform: translateY(-2px);
-
-  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
-}
-
-.btn-outline {
-  background: #ffffff;
-
-  border: 1px solid var(--border);
-
-  color: var(--text);
-
-  font-weight: 500;
-}
-
-.btn-outline:hover {
-  border-color: var(--primary);
-
-  color: var(--primary);
-
-  transform: translateY(-2px);
-
-  box-shadow: var(--shadow-sm);
-}
-
-.hero-stats {
-  display: flex;
-
-  gap: 3rem;
-
-  flex-wrap: wrap;
-}
-
-.stat-num {
-  font-family: var(--font-display);
-
-  font-size: 1.7rem;
-
-  font-weight: 800;
-
-  color: var(--text);
-
-  letter-spacing: -0.03em;
-}
-
-.stat-label {
-  font-size: 0.72rem;
-
-  color: var(--text-muted);
-
-  letter-spacing: 0.06em;
-
-  text-transform: uppercase;
-
-  margin-top: 0.15rem;
-}
-
-
-/* Professional personal-profile background treatment */
-#hero {
-  position: relative;
-  overflow: hidden;
-}
-
-#hero::before {
-  content: "";
-  position: absolute;
-  width: 420px;
-  height: 420px;
-  right: -140px;
-  top: -160px;
-  border-radius: 50%;
-  background: rgba(37, 99, 235, 0.045);
-  pointer-events: none;
-}
-
-#hero .container {
-  position: relative;
-  z-index: 1;
-}
-
-/* ================================
-   SECTIONS
-================================ */
-
-section {
-  padding: 5.5rem 0;
-
-  border-bottom: 1px solid var(--border);
-}
-
-.section-label {
-  font-family: var(--font-mono);
-
-  font-size: 0.7rem;
-
-  color: var(--primary);
-
-  letter-spacing: 0.1em;
-
-  text-transform: uppercase;
-
-  margin-bottom: 0.65rem;
-}
-
-.section-title {
-  font-family: var(--font-display);
-
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
-
-  line-height: 1.2;
-
-  font-weight: 750;
-
-  letter-spacing: -0.04em;
-
-  margin-bottom: 0.8rem;
-}
-
-.section-sub {
-  font-size: 0.95rem;
-
-  color: var(--text-secondary);
-
-  max-width: 620px;
-
-  margin-bottom: 2.8rem;
-}
-
-/* ================================
-   ABOUT
-================================ */
-#about {
-  text-align: center;
-  background: #ffffff;
-}
-
-#about .grid {
-  display: flex;
-  justify-content: center;
-}
-
-.about-text {
-  width: 100%;
-  max-width: 850px;
-  margin: 0 auto;
-}
-
-.about-text p {
-  max-width: 800px;
-  margin: 0 auto 1.2rem;
-  color: var(--text-secondary);
-  font-size: 0.96rem;
-  line-height: 1.8;
-}
-
-#about .section-label {
-  margin-bottom: 1rem;
-}
-
-#about .grid {
-  display: grid;
-
-  grid-template-columns: 1.3fr 0.7fr;
-
-  gap: 5rem;
-
-  align-items: start;
-}
-
-.about-text p {
-  color: var(--text-secondary);
-
-  margin-bottom: 1.2rem;
-
-  font-size: 0.96rem;
-}
-
-.about-text p strong {
-  color: var(--text);
-  font-weight: 650;
-}
-
-.tag-list {
-  display: flex;
-
-  flex-wrap: wrap;
-
-  gap: 0.5rem;
-
-  margin-top: 1.5rem;
-}
-
-.tag {
-  font-family: var(--font-mono);
-
-  font-size: 0.68rem;
-
-  padding: 0.35rem 0.7rem;
-
-  background: var(--bg-soft);
-
-  border: 1px solid var(--border);
-
-  border-radius: 5px;
-
-  color: var(--text-secondary);
-
-  transition:
-    border-color 0.2s ease,
-    color 0.2s ease,
-    background 0.2s ease;
-}
-
-.tag:hover {
-  border-color: #bfdbfe;
-
-  color: var(--primary);
-
-  background: var(--primary-light);
-}
-
-/* ================================
-   ABOUT CARD
-================================ */
-.about-card {
-  text-align: center;
-}
-
-.about-edu {
-  text-align: center;
-}
-
-.about-edu-item {
-  font-weight: 600;
-  margin-top: 0.8rem;
-}
-
-.about-edu-sub {
-  color: var(--text-muted);
-  font-size: 0.8rem;
-  margin-top: 0.2rem;
-}
-.about-card {
-  background: #fff;
-
-  border: 1px solid var(--border);
-
-  border-radius: var(--radius-lg);
-
-  padding: 1.7rem;
-
-  box-shadow: var(--shadow-sm);
-
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.about-card:hover {
-  transform: translateY(-3px);
-
-  box-shadow: var(--shadow-md);
-}
-
-.about-card-grid {
-  display: grid;
-
-  grid-template-columns: 1fr 1fr;
-
-  gap: 0.8rem;
-
-  margin-top: 1rem;
-}
-
-.about-stat {
-  text-align: center;
-
-  padding: 1rem;
-
-  background: var(--bg-soft);
-
-  border: 1px solid var(--border);
-
-  border-radius: var(--radius-md);
-}
-
-.about-stat-num {
-  font-family: var(--font-display);
-
-  font-size: 1.4rem;
-
-  font-weight: 800;
-
-  color: var(--primary);
-}
-
-.about-stat-label {
-  font-size: 0.68rem;
-
-  color: var(--text-muted);
-
-  margin-top: 0.2rem;
-
-  text-transform: uppercase;
-
-  letter-spacing: 0.04em;
-}
-
-/* ================================
-   SKILLS
-================================ */
-
-#skills {
-  background: var(--bg-soft);
-}
-
-.skills-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(auto-fit, minmax(240px, 1fr));
-
-  gap: 1.2rem;
-}
-
-.skill-card {
-  background: #fff;
-
-  border: 1px solid var(--border);
-
-  border-radius: var(--radius-md);
-
-  padding: 1.5rem;
-
-  box-shadow: var(--shadow-sm);
-
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    border-color 0.2s ease;
-}
-
-.skill-card:hover {
-  transform: translateY(-4px);
-
-  border-color: #bfdbfe;
-
-  box-shadow: var(--shadow-md);
-}
-
-.skill-cat {
-  font-family: var(--font-display);
-
-  font-size: 0.95rem;
-
-  font-weight: 700;
-
-  margin-bottom: 0.9rem;
-}
-
-.skill-tags {
-  display: flex;
-
-  flex-wrap: wrap;
-
-  gap: 0.4rem;
-}
-
-.skill-tag {
-  font-family: var(--font-mono);
-
-  font-size: 0.65rem;
-
-  padding: 0.25rem 0.55rem;
-
-  border-radius: 4px;
-
-  background: var(--bg-soft);
-
-  border: 1px solid var(--border);
-
-  color: var(--text-secondary);
-}
-
-/* ================================
-   PROJECTS
-================================ */
-
-.projects-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(auto-fit, minmax(300px, 1fr));
-
-  gap: 1.3rem;
-}
-
-.proj-card {
-  background: #fff;
-
-  border: 1px solid var(--border);
-
-  border-radius: var(--radius-md);
-
-  padding: 1.6rem;
-
-  transition:
-    transform 0.2s ease,
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.proj-card:hover {
-  transform: translateY(-5px);
-
-  border-color: #bfdbfe;
-
-  box-shadow: var(--shadow-lg);
-}
-
-.proj-num {
-  font-family: var(--font-mono);
-
-  font-size: 0.66rem;
-
-  color: var(--primary);
-
-  margin-bottom: 0.7rem;
-}
-
-.proj-title {
-  font-family: var(--font-display);
-
-  font-size: 1.08rem;
-
-  font-weight: 700;
-
-  letter-spacing: -0.02em;
-
-  margin-bottom: 0.6rem;
-}
-
-.proj-desc {
-  font-size: 0.84rem;
-
-  color: var(--text-secondary);
-
-  margin-bottom: 1rem;
-}
-
-.proj-bullets {
-  list-style: none;
-
-  margin-bottom: 1.1rem;
-}
-
-.proj-bullets li {
-  font-size: 0.79rem;
-
-  color: var(--text-secondary);
-
-  padding: 0.22rem 0;
-
-  padding-left: 1rem;
-
-  position: relative;
-}
-
-.proj-bullets li::before {
-  content: "›";
-
-  position: absolute;
-
-  left: 0;
-
-  color: var(--primary);
-
-  font-weight: 700;
-}
-
-.proj-stack {
-  display: flex;
-
-  flex-wrap: wrap;
-
-  gap: 0.35rem;
-
-  margin-bottom: 1.1rem;
-}
-
-.proj-tech {
-  font-family: var(--font-mono);
-
-  font-size: 0.63rem;
-
-  padding: 0.2rem 0.5rem;
-
-  background: var(--primary-light);
-
-  border: 1px solid #dbeafe;
-
-  border-radius: 4px;
-
-  color: var(--primary-dark);
-}
-
-.proj-link {
-  display: inline-flex;
-
-  align-items: center;
-
-  gap: 0.4rem;
-
-  font-size: 0.78rem;
-
-  font-weight: 650;
-
-  color: var(--primary);
-
-  text-decoration: none;
-}
-
-.proj-link:hover {
-  text-decoration: underline;
-}
-
-.proj-highlight {
-  border-color: #93c5fd;
-
-  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.08);
-}
-
-/* ================================
-   EXPERIENCE
-================================ */
-
-.timeline {
-  position: relative;
-
-  padding-left: 1.7rem;
-
-  border-left: 2px solid var(--border);
-}
-
-.exp-item {
-  position: relative;
-
-  margin-bottom: 2.5rem;
-
-  padding-left: 1rem;
-}
-
-.exp-item:last-child {
-  margin-bottom: 0;
-}
-
-.exp-dot {
-  position: absolute;
-
-  left: -1.82rem;
-
-  top: 0.35rem;
-
-  width: 11px;
-  height: 11px;
-
-  border-radius: 50%;
-
-  background: var(--primary);
-
-  border: 3px solid #fff;
-
-  box-shadow: 0 0 0 2px #bfdbfe;
-}
-
-.exp-meta {
-  font-family: var(--font-mono);
-
-  font-size: 0.68rem;
-
-  color: var(--primary);
-
-  margin-bottom: 0.3rem;
-}
-
-.exp-role {
-  font-family: var(--font-display);
-
-  font-size: 1.08rem;
-
-  font-weight: 700;
-}
-
-.exp-company {
-  color: var(--text-secondary);
-
-  font-size: 0.85rem;
-
-  margin-bottom: 0.7rem;
-}
-
-.exp-bullets {
-  list-style: none;
-}
-
-.exp-bullets li {
-  font-size: 0.82rem;
-
-  color: var(--text-secondary);
-
-  padding: 0.2rem 0;
-
-  padding-left: 1rem;
-
-  position: relative;
-}
-
-.exp-bullets li::before {
-  content: "—";
-
-  position: absolute;
-
-  left: 0;
-
-  color: var(--primary);
-}
-
-/* ================================
-   CODING
-================================ */
-
-#coding {
-  background: var(--bg-soft);
-}
-
-.coding-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(3, 1fr);
-
-  gap: 1.2rem;
-}
-
-.coding-card {
-  background: #fff;
-
-  border: 1px solid var(--border);
-
-  border-radius: var(--radius-md);
-
-  padding: 1.7rem;
-
-  text-align: center;
-
-  box-shadow: var(--shadow-sm);
-
-  transition: transform 0.2s ease;
-}
-
-.coding-card:hover {
-  transform: translateY(-4px);
-}
-
-.coding-num {
-  font-family: var(--font-display);
-
-  font-size: 2.2rem;
-
-  font-weight: 800;
-
-  color: var(--primary);
-}
-
-.coding-platform {
-  font-size: 0.92rem;
-
-  font-weight: 700;
-
-  margin-top: 0.3rem;
-}
-
-.coding-label {
-  font-size: 0.76rem;
-
-  color: var(--text-muted);
-}
-
-/* ================================
-   CERTIFICATIONS
-================================ */
-
-.certs-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(auto-fit, minmax(240px, 1fr));
-
-  gap: 1rem;
-}
-
-.cert-card {
-  background: #fff;
-
-  border: 1px solid var(--border);
-
-  border-radius: var(--radius-md);
-
-  padding: 1.3rem;
-
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.cert-card:hover {
-  transform: translateY(-3px);
-
-  box-shadow: var(--shadow-md);
-}
-
-.cert-title {
-  font-size: 0.88rem;
-
-  font-weight: 650;
-}
-
-.cert-issuer {
-  font-family: var(--font-mono);
-
-  font-size: 0.68rem;
-
-  color: var(--primary);
-
-  margin-top: 0.3rem;
-}
-
-/* ================================
-   TESTIMONIALS
-================================ */
-
-#testimonials {
-  background: var(--bg-soft);
-}
-
-.testi-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(auto-fit, minmax(280px, 1fr));
-
-  gap: 1.2rem;
-}
-
-.testi-card {
-  background: #fff;
-
-  border: 1px solid var(--border);
-
-  border-radius: var(--radius-md);
-
-  padding: 1.5rem;
-
-  box-shadow: var(--shadow-sm);
-}
-
-.testi-quote {
-  font-size: 0.86rem;
-
-  color: var(--text-secondary);
-
-  margin-bottom: 1.1rem;
-
-  font-style: italic;
-}
-
-.testi-author {
-  display: flex;
-
-  align-items: center;
-
-  gap: 0.65rem;
-}
-
-.testi-avatar {
-  width: 36px;
-  height: 36px;
-
-  border-radius: 50%;
-
-  background: var(--primary);
-
-  color: #fff;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  font-weight: 700;
-
-  font-size: 0.78rem;
-}
-
-.testi-name {
-  font-size: 0.82rem;
-
-  font-weight: 650;
-}
-
-.testi-role {
-  font-size: 0.7rem;
-
-  color: var(--text-muted);
-}
-
-/* ================================
-   CONTACT
-================================ */
-
-.contact-grid {
-  display: grid;
-
-  grid-template-columns: 1fr 1fr;
-
-  gap: 5rem;
-}
-
-.contact-links {
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 0.65rem;
-
-  margin-top: 1.5rem;
-}
-
-.contact-link {
-  display: flex;
-
-  align-items: center;
-
-  gap: 0.75rem;
-
-  padding: 0.8rem 1rem;
-
-  background: var(--bg-soft);
-
-  border: 1px solid var(--border);
-
-  border-radius: var(--radius-md);
-
-  text-decoration: none;
-
-  color: var(--text);
-
-  transition:
-    border-color 0.2s ease,
-    transform 0.2s ease;
-}
-
-.contact-link:hover {
-  border-color: #bfdbfe;
-
-  transform: translateX(3px);
-}
-
-.contact-link-text strong {
-  display: block;
-
-  font-size: 0.84rem;
-}
-
-.contact-link-text span {
-  font-size: 0.72rem;
-
-  color: var(--text-muted);
-
-  font-family: var(--font-mono);
-}
-
-.contact-form {
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 1rem;
-}
-
-.form-label {
-  font-size: 0.72rem;
-
-  font-weight: 650;
-
-  color: var(--text-secondary);
-
-  text-transform: uppercase;
-
-  letter-spacing: 0.05em;
-
-  display: block;
-
-  margin-bottom: 0.4rem;
-
-  font-family: var(--font-mono);
-}
-
-.form-input,
-.form-textarea {
-  width: 100%;
-
-  background: #fff;
-
-  border: 1px solid var(--border);
-
-  border-radius: var(--radius-sm);
-
-  padding: 0.75rem 0.9rem;
-
-  font-family: var(--font-body);
-
-  font-size: 0.86rem;
-
-  color: var(--text);
-
-  outline: none;
-
-  transition:
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.form-input:focus,
-.form-textarea:focus {
-  border-color: var(--primary);
-
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-}
-
-.form-textarea {
-  height: 120px;
-
-  resize: vertical;
-}
-
-.form-btn {
-  padding: 0.85rem;
-
-  background: var(--primary);
-
-  border: none;
-
-  border-radius: var(--radius-sm);
-
-  font-weight: 650;
-
-  font-size: 0.88rem;
-
-  color: #fff;
-
-  cursor: pointer;
-
-  transition:
-    background 0.2s ease,
-    transform 0.2s ease;
-}
-
-.form-btn:hover {
-  background: var(--primary-dark);
-
-  transform: translateY(-1px);
-}
-
-.form-success {
+.mobile-menu {
   display: none;
 
-  padding: 1rem;
+  border-bottom: 1px solid var(--line);
 
-  color: var(--success);
-
-  font-size: 0.85rem;
-
-  text-align: center;
+  background: var(--bg-raised);
 }
 
-/* ================================
-   FOOTER
-================================ */
-
-footer {
-  padding: 2.5rem 0;
-
-  text-align: center;
-
-  font-size: 0.78rem;
-
-  color: var(--text-muted);
+.mobile-menu.open {
+  display: block;
 }
 
-footer strong {
-  color: var(--text);
+.mobile-menu ul {
+  list-style: none;
+
+  margin: 0;
+
+  padding: 10px 24px 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
 }
 
-/* ================================
-   RESPONSIVE
-================================ */
+.mobile-menu a {
+  color: var(--ink);
 
-@media (max-width: 860px) {
+  font-size: 15px;
+}
+
+@media (min-width: 760px) {
 
   .nav-links {
-    display: none;
-
-    position: absolute;
-
-    top: 100%;
-    left: 0;
-    right: 0;
-
-    background: #fff;
-
-    flex-direction: column;
-
-    padding: 1.3rem 1.5rem;
-
-    gap: 1rem;
-
-    border-bottom: 1px solid var(--border);
-
-    box-shadow: var(--shadow-md);
-  }
-
-  .nav-links.open {
-    display: flex;
-  }
-
-  .menu-toggle {
     display: flex;
   }
 
   .nav-cta {
+    display: inline-block;
+  }
+
+  .menu-btn {
     display: none;
   }
+}
 
-  #about .grid,
-  .contact-grid {
-    grid-template-columns: 1fr;
+/* =========================================================
+   HERO
+========================================================= */
 
-    gap: 2.5rem;
-  }
+.hero {
+  padding: 60px 0 52px;
 
-  .coding-grid {
-    grid-template-columns: 1fr 1fr;
-  }
+  display: grid;
 
-  #hero {
-    padding: 5rem 0 4rem;
+  gap: 38px;
+}
+
+.eyebrow {
+  display: inline-block;
+
+  font-family: "IBM Plex Mono", monospace;
+
+  color: var(--amber);
+
+  font-size: 13px;
+
+  letter-spacing: 0.02em;
+}
+
+.hero h1 {
+  font-size: clamp(36px, 7vw, 58px);
+
+  line-height: 1.08;
+
+  margin-top: 14px;
+
+  max-width: 15ch;
+
+  letter-spacing: -0.03em;
+}
+
+.hero h1 em {
+  font-style: normal;
+
+  color: var(--teal);
+}
+
+.hero .lede {
+  margin-top: 20px;
+
+  color: var(--muted);
+
+  font-size: 17px;
+
+  max-width: 62ch;
+}
+
+.hero-actions {
+  margin-top: 28px;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+}
+
+.btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-family: "IBM Plex Mono", monospace;
+
+  font-size: 14px;
+
+  padding: 11px 18px;
+
+  border-radius: var(--radius);
+
+  border: 1px solid var(--line);
+
+  color: var(--ink);
+
+  transition: 0.2s ease;
+}
+
+.btn.primary {
+  background: var(--amber);
+
+  color: #14181d;
+
+  border-color: var(--amber);
+
+  font-weight: 600;
+}
+
+.btn.primary:hover {
+  opacity: 0.92;
+
+  text-decoration: none;
+
+  transform: translateY(-1px);
+}
+
+.btn:hover {
+  border-color: var(--teal);
+
+  color: var(--teal);
+
+  text-decoration: none;
+}
+
+/* =========================================================
+   TERMINAL
+========================================================= */
+
+.terminal {
+  background: var(--bg-raised);
+
+  border: 1px solid var(--line);
+
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  width: 100%;
+
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+}
+
+.terminal-bar {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 10px 14px;
+
+  border-bottom: 1px solid var(--line);
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: #3a4149;
+}
+
+.terminal-title {
+  margin-left: 8px;
+
+  font-family: "IBM Plex Mono", monospace;
+
+  font-size: 12px;
+
+  color: var(--muted);
+}
+
+.terminal pre {
+  margin: 0;
+
+  padding: 18px 16px 20px;
+
+  font-family: "IBM Plex Mono", monospace;
+
+  font-size: 13px;
+
+  line-height: 1.75;
+
+  color: var(--ink);
+
+  white-space: pre-wrap;
+
+  word-break: break-word;
+
+  overflow-x: auto;
+}
+
+.terminal pre .k {
+  color: var(--teal);
+}
+
+.terminal pre .v {
+  color: var(--amber);
+}
+
+.terminal pre .c {
+  color: var(--muted);
+}
+
+@media (min-width: 860px) {
+
+  .hero {
+    grid-template-columns: 1.05fr 0.95fr;
+
+    align-items: center;
+
+    padding: 86px 0 74px;
   }
 }
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+section {
+  padding: 60px 0;
+
+  border-top: 1px solid var(--line);
+}
+
+.section-head {
+  margin-bottom: 32px;
+
+  max-width: 72ch;
+}
+
+.section-head .eyebrow {
+  margin-bottom: 10px;
+}
+
+.section-head h2 {
+  font-size: clamp(25px, 4vw, 32px);
+
+  line-height: 1.2;
+}
+
+.section-head p {
+  color: var(--muted);
+
+  margin-top: 10px;
+
+  font-size: 15px;
+}
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-grid {
+  display: grid;
+
+  gap: 30px;
+}
+
+.about-body p {
+  color: var(--ink);
+
+  font-size: 15.5px;
+}
+
+.about-body p + p {
+  margin-top: 15px;
+}
+
+.about-body strong {
+  color: var(--teal);
+}
+
+.education-card {
+  border: 1px solid var(--line);
+
+  border-radius: var(--radius);
+
+  padding: 20px;
+
+  background: var(--bg-raised);
+}
+
+.education-title {
+  font-family: "IBM Plex Mono", monospace;
+
+  color: var(--amber);
+
+  font-size: 13px;
+
+  margin-bottom: 16px;
+}
+
+.education-item + .education-item {
+  margin-top: 20px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid var(--line);
+}
+
+.education-degree {
+  font-size: 15px;
+
+  font-weight: 600;
+}
+
+.education-place {
+  color: var(--muted);
+
+  font-size: 13px;
+
+  margin-top: 5px;
+}
+
+.stat-row {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 12px;
+
+  margin-top: 20px;
+}
+
+.stat {
+  border: 1px solid var(--line);
+
+  border-radius: var(--radius);
+
+  padding: 15px;
+
+  background: var(--bg-raised);
+}
+
+.stat .num {
+  font-family: "IBM Plex Mono", monospace;
+
+  font-size: 22px;
+
+  color: var(--amber);
+}
+
+.stat .label {
+  color: var(--muted);
+
+  font-size: 12px;
+
+  margin-top: 4px;
+}
+
+@media (min-width: 760px) {
+
+  .about-grid {
+    grid-template-columns: 1.3fr 0.9fr;
+  }
+
+  .stat-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skill-groups {
+  display: grid;
+
+  gap: 16px;
+}
+
+.skill-card {
+  border: 1px solid var(--line);
+
+  border-radius: var(--radius);
+
+  padding: 18px;
+
+  background: var(--bg-raised);
+
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.skill-card:hover {
+  border-color: #46515c;
+
+  transform: translateY(-2px);
+}
+
+.skill-card h3 {
+  font-size: 14px;
+
+  color: var(--muted);
+
+  font-weight: 600;
+}
+
+.tag-row {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-top: 12px;
+}
+
+.tag {
+  font-family: "IBM Plex Mono", monospace;
+
+  font-size: 12px;
+
+  padding: 5px 9px;
+
+  border: 1px solid var(--line);
+
+  border-radius: 3px;
+
+  color: var(--ink);
+
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.tag:hover {
+  border-color: var(--teal);
+
+  color: var(--teal);
+}
+
+@media (min-width: 760px) {
+
+  .skill-groups {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.project-list {
+  display: grid;
+
+  gap: 18px;
+}
+
+.project {
+  border: 1px solid var(--line);
+
+  border-radius: 8px;
+
+  background: var(--bg-raised);
+
+  padding: 22px;
+
+  display: grid;
+
+  gap: 16px;
+
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.project:hover {
+  border-color: #46515c;
+
+  transform: translateY(-2px);
+
+  background: var(--bg-raised-2);
+}
+
+.project-icon {
+  width: 34px;
+
+  height: 34px;
+
+  flex-shrink: 0;
+}
+
+.project-number {
+  font-family: "IBM Plex Mono", monospace;
+
+  color: var(--amber);
+
+  font-size: 12px;
+
+  margin-bottom: 7px;
+}
+
+.project-top {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 12px;
+}
+
+.project h3 {
+  font-size: 19px;
+
+  line-height: 1.3;
+}
+
+.project p.desc {
+  color: var(--muted);
+
+  font-size: 14.5px;
+
+  margin-top: 8px;
+}
+
+.project-bullets {
+  margin: 15px 0 0;
+
+  padding-left: 19px;
+
+  color: var(--muted);
+
+  font-size: 13.5px;
+}
+
+.project-bullets li + li {
+  margin-top: 6px;
+}
+
+.project-bullets li::marker {
+  color: var(--amber);
+}
+
+.project-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  margin-top: 16px;
+
+  font-family: "IBM Plex Mono", monospace;
+
+  font-size: 13px;
+
+  color: var(--teal);
+}
+
+.project-link:hover {
+  color: var(--amber);
+}
+
+.project .tag-row {
+  margin-top: 15px;
+}
+
+@media (min-width: 760px) {
+
+  .project {
+    grid-template-columns: 40px 1fr;
+
+    align-items: start;
+  }
+
+  .project-icon {
+    margin-top: 3px;
+  }
+}
+
+/* =========================================================
+   EXPERIENCE
+========================================================= */
+
+.timeline {
+  position: relative;
+
+  border-left: 1px solid var(--line);
+
+  padding-left: 26px;
+}
+
+.experience-item {
+  position: relative;
+
+  padding-bottom: 35px;
+}
+
+.experience-item:last-child {
+  padding-bottom: 0;
+}
+
+.experience-item::before {
+  content: "";
+
+  position: absolute;
+
+  left: -32px;
+
+  top: 4px;
+
+  width: 10px;
+
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: var(--amber);
+
+  box-shadow: 0 0 0 4px var(--bg);
+}
+
+.experience-meta {
+  font-family: "IBM Plex Mono", monospace;
+
+  font-size: 12px;
+
+  color: var(--amber);
+
+  margin-bottom: 6px;
+}
+
+.experience-role {
+  font-size: 20px;
+
+  color: var(--ink);
+}
+
+.experience-company {
+  color: var(--teal);
+
+  font-size: 14px;
+
+  margin-top: 3px;
+
+  margin-bottom: 12px;
+}
+
+.experience-bullets {
+  margin: 0;
+
+  padding-left: 19px;
+
+  color: var(--muted);
+
+  font-size: 14px;
+}
+
+.experience-bullets li + li {
+  margin-top: 7px;
+}
+
+.experience-bullets li::marker {
+  color: var(--teal);
+}
+
+/* =========================================================
+   CERTIFICATIONS
+========================================================= */
+
+.cert-grid {
+  display: grid;
+
+  gap: 16px;
+}
+
+.cert-card {
+  border: 1px solid var(--line);
+
+  border-radius: var(--radius);
+
+  background: var(--bg-raised);
+
+  padding: 18px;
+
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.cert-card:hover {
+  border-color: #46515c;
+
+  transform: translateY(-2px);
+}
+
+.cert-title {
+  font-size: 15px;
+
+  font-weight: 600;
+}
+
+.cert-issuer {
+  font-family: "IBM Plex Mono", monospace;
+
+  color: var(--amber);
+
+  font-size: 12px;
+
+  margin-top: 6px;
+}
+
+@media (min-width: 760px) {
+
+  .cert-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-grid {
+  display: grid;
+
+  gap: 16px;
+}
+
+.contact-card {
+  border: 1px solid var(--line);
+
+  border-radius: var(--radius);
+
+  padding: 18px;
+
+  background: var(--bg-raised);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.contact-card:hover {
+  border-color: #46515c;
+
+  transform: translateY(-2px);
+}
+
+.contact-card svg {
+  width: 20px;
+
+  height: 20px;
+
+  color: var(--teal);
+
+  flex-shrink: 0;
+}
+
+.contact-card .label {
+  font-size: 12px;
+
+  color: var(--muted);
+}
+
+.contact-card .value {
+  font-size: 14px;
+
+  word-break: break-word;
+
+  margin-top: 2px;
+}
+
+.contact-card a {
+  color: var(--teal);
+}
+
+@media (min-width: 760px) {
+
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================================================
+   RESUME
+========================================================= */
+
+.resume-box {
+  margin-top: 28px;
+
+  padding: 20px;
+
+  border: 1px solid var(--line);
+
+  border-radius: var(--radius);
+
+  background: var(--bg-raised);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  flex-wrap: wrap;
+}
+
+.resume-box p {
+  color: var(--muted);
+
+  font-size: 14px;
+}
+
+.resume-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  background: var(--amber);
+
+  color: #14181d;
+
+  padding: 10px 16px;
+
+  border-radius: var(--radius);
+
+  font-family: "IBM Plex Mono", monospace;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+.resume-btn:hover {
+  text-decoration: none;
+
+  opacity: 0.9;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+  border-top: 1px solid var(--line);
+
+  padding: 28px 0 40px;
+
+  color: var(--muted);
+
+  font-size: 13px;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  justify-content: space-between;
+}
+
+footer .mono {
+  color: var(--muted);
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media (max-width: 560px) {
 
-  .container {
-    padding: 0 1.1rem;
+  .wrap {
+    padding: 0 18px;
+  }
+
+  .hero {
+    padding: 48px 0 42px;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .hero .lede {
+    font-size: 15.5px;
   }
 
   section {
-    padding: 4rem 0;
+    padding: 48px 0;
   }
 
-  #hero {
-    padding: 4rem 0 3.5rem;
-  }
-
-  .hero-name {
-    font-size: 2.5rem;
-  }
-
-  .hero-title {
-    font-size: 1rem;
-  }
-
-  .hero-btns {
+  .hero-actions {
     flex-direction: column;
-
-    align-items: stretch;
   }
 
-  .btn-primary,
-  .btn-outline {
+  .btn {
     width: 100%;
   }
 
-  .hero-stats {
-    gap: 1.5rem;
+  .project {
+    padding: 18px;
   }
 
-  .coding-grid {
-    grid-template-columns: 1fr;
+  .project-top {
+    flex-direction: column;
   }
 
-  .projects-grid {
-    grid-template-columns: 1fr;
+  .stat-row {
+    grid-template-columns: 1fr 1fr;
   }
 
-  .skills-grid {
-    grid-template-columns: 1fr;
+  .resume-box {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .resume-btn {
+    width: 100%;
+
+    justify-content: center;
   }
 }
+
 </style>
 </head>
-<body>
-<nav id="navbar">
-  <div class="container">
 
-    <a href="#hero" class="nav-profile">
+<body>
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<header class="site">
+
+  <div class="wrap nav">
+
+    <a href="#home" class="nav-profile">
+
       <img
         src="mohan.jpg"
-        class="nav-profile-image"
-      />
+        alt="Mohan Raj G"
+      >
+
+      <div class="nav-mark">
+        Mohan<span>raj</span>.dev
+      </div>
+
     </a>
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <ul class="nav-links">
 
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li>
+        <a href="#about">About</a>
+      </li>
+
+      <li>
+        <a href="#skills">Skills</a>
+      </li>
+
+      <li>
+        <a href="#projects">Projects</a>
+      </li>
+
+      <li>
+        <a href="#experience">Experience</a>
+      </li>
+
+      <li>
+        <a href="#certifications">Certifications</a>
+      </li>
+
+      <li>
+        <a href="#contact">Contact</a>
+      </li>
+
     </ul>
 
-    <a href="./Mohan%20Raj%20G.pdf" download="Mohan Raj G.pdf" class="resume-btn">
-  <span>↓</span> My Resume
-</a>
+    <a
+      class="nav-cta"
+      href="./Mohan%20Raj%20G.pdf"
+      download="Mohan Raj G.pdf"
+    >
+      Resume
+    </a>
+
+    <button
+      class="menu-btn"
+      id="menuBtn"
+      aria-expanded="false"
+      aria-controls="mobileMenu"
+      aria-label="Open menu"
+    >
+
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+      >
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+
+    </button>
+
   </div>
-</nav>
 
-<section id="hero">
-  <div class="container">
+  <nav class="mobile-menu" id="mobileMenu">
 
-    <span class="hero-eyebrow">
-      Available for Work · India
+    <ul>
+
+      <li>
+        <a href="#about">About</a>
+      </li>
+
+      <li>
+        <a href="#skills">Skills</a>
+      </li>
+
+      <li>
+        <a href="#projects">Projects</a>
+      </li>
+
+      <li>
+        <a href="#experience">Experience</a>
+      </li>
+
+      <li>
+        <a href="#certifications">Certifications</a>
+      </li>
+
+      <li>
+        <a href="#contact">Contact</a>
+      </li>
+
+      <li>
+        <a href="./Mohan%20Raj%20G.pdf" download="Mohan Raj G.pdf">
+          Download Resume
+        </a>
+      </li>
+
+    </ul>
+
+  </nav>
+
+</header>
+
+
+<main id="home">
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero wrap" style="border-top:none;">
+
+  <div>
+
+    <span class="eyebrow mono">
+      Python Full-Stack Developer · Open to Work
     </span>
 
-    <h1 class="hero-name">
-      Mohan Raj G
+    <h1>
+      Mohan Raj G builds
+      <em>full-stack software</em>
+      that solves real problems.
     </h1>
 
-    <p class="hero-title">
-      <strong>Python Full-Stack Developer</strong>
+    <p class="lede">
+
+      Computer Science graduate from Coimbatore Institute of Technology
+      focused on Python full-stack development, backend engineering,
+      REST APIs, AI-powered applications, and scalable software systems.
+
     </p>
 
-    <div class="hero-btns">
-      <a href="#projects" class="btn-primary">My Project</a>
-      <a href="#contact" class="btn-outline">Get in Touch</a>
-    </div>
+    <div class="hero-actions">
 
-    <div class="hero-stats">
-      <div>
-        <div class="stat-num">400+</div>
-        <div class="stat-label">Problems Solved</div>
-      </div>
+      <a
+        class="btn primary"
+        href="#projects"
+      >
+        See my projects
+      </a>
 
-      <div>
-        <div class="stat-num">6+</div>
-        <div class="stat-label">Major Projects</div>
-      </div>
+      <a
+        class="btn"
+        href="#contact"
+      >
+        Get in touch
+      </a>
 
-      <div>
-        <div class="stat-num">3+</div>
-        <div class="stat-label">Years Learning</div>
-      </div>
+      <a
+        class="btn"
+        href="./Mohan%20Raj%20G.pdf"
+        download="Mohan Raj G.pdf"
+      >
+        ↓ Resume
+      </a>
+
     </div>
 
   </div>
+
+
+  <!-- TERMINAL -->
+
+  <div
+    class="terminal"
+    role="img"
+    aria-label="Terminal showing Mohan Raj G profile"
+  >
+
+    <div class="terminal-bar">
+
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+
+      <span class="terminal-title">
+        profile.sh
+      </span>
+
+    </div>
+
+<pre><span class="c">$</span> whoami --verbose
+
+<span class="k">name</span>       <span class="v">Mohan Raj G</span>
+<span class="k">role</span>       <span class="v">Python Full-Stack Developer</span>
+<span class="k">degree</span>     <span class="v">B.E. Computer Science & Engineering</span>
+<span class="k">college</span>    <span class="v">Coimbatore Institute of Technology</span>
+<span class="k">graduated</span>  <span class="v">2026</span>
+<span class="k">location</span>   <span class="v">Trichy, Tamil Nadu</span>
+<span class="k">focus</span>      <span class="v">Python · React · APIs · AI</span>
+<span class="k">projects</span>   <span class="v">8+ major projects</span>
+<span class="k">coding</span>     <span class="v">400+ problems solved</span>
+<span class="k">status</span>     <span class="v">available for opportunities</span>
+
+<span class="c">$</span> _</pre>
+
+  </div>
+
 </section>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
 
 <section id="about">
-  <div class="container">
 
-    <div class="about-content">
+  <div class="wrap">
 
-      <div class="section-label">About Me</div>
+    <div class="section-head">
 
-      <p>
-        I'm a <strong>Computer Science graduate</strong> from
-        <strong>Coimbatore Institute of Technology</strong> with a strong
-        interest in <strong>Software Development and Python Full-Stack Development</strong>.
-        I enjoy building reliable, scalable, and user-focused applications
-        that solve real-world problems.
-      </p>
+      <span class="eyebrow mono">
+        01 — About
+      </span>
 
-      <p>
-        I work across the full development stack, from designing
-        <strong>Python-based backend services and REST APIs</strong> to
-        developing responsive frontend applications.
-      </p>
+      <h2>
+        Software development with a full-stack and AI focus.
+      </h2>
 
       <p>
-        I focus on writing <strong>clean, maintainable code</strong>,
-        developing efficient APIs, building reusable components, and
-        delivering production-ready applications.
+        Building reliable applications from frontend interfaces
+        to backend services, databases, APIs, and AI integrations.
       </p>
 
     </div>
 
-    <div class="about-card">
 
-      <div class="section-label">Education</div>
+    <div class="about-grid">
 
-      <div class="about-edu">
+      <div class="about-body">
 
-        <div class="about-edu-item">
-          Bachelor of Engineering in Computer Science & Engineering
+        <p>
+          I'm a <strong>Computer Science graduate</strong> from
+          <strong>Coimbatore Institute of Technology</strong> with a strong
+          interest in <strong>Software Development and Python Full-Stack Development</strong>.
+          I enjoy building reliable, scalable, and user-focused applications
+          that solve real-world problems.
+        </p>
+
+        <p>
+          I work across the full development stack, from designing
+          <strong>Python-based backend services and REST APIs</strong>
+          to developing responsive frontend applications using
+          React, TypeScript, and modern UI technologies.
+        </p>
+
+        <p>
+          My work also includes
+          <strong>AI/ML, LLM integrations, AI agents, workflow automation,
+          authentication, RBAC, databases, and API development.</strong>
+        </p>
+
+        <p>
+          I focus on writing <strong>clean, maintainable code</strong>,
+          developing efficient APIs, building reusable components,
+          and delivering production-ready applications.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <div class="education-card">
+
+          <div class="education-title">
+            EDUCATION
+          </div>
+
+          <div class="education-item">
+
+            <div class="education-degree">
+              Bachelor of Engineering in
+              Computer Science & Engineering
+            </div>
+
+            <div class="education-place">
+              Coimbatore Institute of Technology · 2023–2026
+            </div>
+
+          </div>
+
+          <div class="education-item">
+
+            <div class="education-degree">
+              Diploma in Computer Science & Engineering
+            </div>
+
+            <div class="education-place">
+              Sri Rengeswarar Polytechnic · 2020–2023
+            </div>
+
+          </div>
+
         </div>
 
-        <div class="about-edu-sub">
-          Coimbatore Institute of Technology · 2023–2026
-        </div>
 
-        <div class="about-edu-item">
-          Diploma in Computer Science & Engineering
-        </div>
+        <div class="stat-row">
 
-        <div class="about-edu-sub">
-          Sri Rengeswarar Polytechnic · 2020–2023
+          <div class="stat">
+
+            <div class="num">
+              400+
+            </div>
+
+            <div class="label">
+              Problems Solved
+            </div>
+
+          </div>
+
+
+          <div class="stat">
+
+            <div class="num">
+              8+
+            </div>
+
+            <div class="label">
+              Major Projects
+            </div>
+
+          </div>
+
+
+          <div class="stat">
+
+            <div class="num">
+              2026
+            </div>
+
+            <div class="label">
+              Graduation Year
+            </div>
+
+          </div>
+
+
+          <div class="stat">
+
+            <div class="num">
+              3+
+            </div>
+
+            <div class="label">
+              Years Learning
+            </div>
+
+          </div>
+
         </div>
 
       </div>
-      
 
     </div>
 
   </div>
+
 </section>
+
+
+<!-- =====================================================
+     SKILLS
+===================================================== -->
+
 <section id="skills">
-  <div class="container">
-    <div class="section-label">Technical Skills</div>
-    <p class="section-sub">A full-spectrum toolkit — from frontends to distributed backends, cloud infrastructure, and AI integration.</p>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <div class="skill-cat">Frontend</div>
-        <div class="skill-tags"><span class="skill-tag">React.js</span><span class="skill-tag">Redux</span><span class="skill-tag">TypeScript</span><span class="skill-tag">HTML5</span><span class="skill-tag">CSS3</span><span class="skill-tag">Figma</span></div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-cat">Backend</div>
-        <div class="skill-tags"><span class="skill-tag">Node.js</span><span class="skill-tag">Express.js</span><span class="skill-tag">Python</span><span class="skill-tag">Flask</span><span class="skill-tag">Django</span><span class="skill-tag">REST APIs</span><span class="skill-tag">Socket.IO</span></div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-cat">Databases</div>
-        <div class="skill-tags"><span class="skill-tag">PostgreSQL</span><span class="skill-tag">MongoDB</span><span class="skill-tag">Redis</span><span class="skill-tag">SQL</span></div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-cat">DevOps & Cloud</div>
-        <div class="skill-tags"><span class="skill-tag">Docker</span><span class="skill-tag">AWS EC2</span><span class="skill-tag">GitHub Actions</span><span class="skill-tag">Nginx</span><span class="skill-tag">Git</span></div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-cat">AI / ML</div>
-        <div class="skill-tags"><span class="skill-tag">scikit-learn</span><span class="skill-tag">OpenCV</span><span class="skill-tag">YOLOv5</span><span class="skill-tag">Hugging Face</span><span class="skill-tag">Sentence Transformers</span><span class="skill-tag">OpenAI API</span></div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-cat">Languages</div>
-        <div class="skill-tags"><span class="skill-tag">JavaScript</span><span class="skill-tag">Python</span><span class="skill-tag">Html/CSS</span><span class="skill-tag">Java</span><span class="skill-tag">SQl</span></div>
-      </div>
+
+  <div class="wrap">
+
+    <div class="section-head">
+
+      <span class="eyebrow mono">
+        02 — Skills
+      </span>
+
+      <h2>
+        Technical skills
+      </h2>
+
+      <p>
+        A full-spectrum toolkit covering frontend development,
+        backend engineering, databases, cloud, DevOps, and AI/ML.
+      </p>
+
     </div>
+
+
+    <div class="skill-groups">
+
+
+      <!-- FRONTEND -->
+
+      <div class="skill-card">
+
+        <h3>
+          Frontend
+        </h3>
+
+        <div class="tag-row">
+
+          <span class="tag">React.js</span>
+          <span class="tag">Redux</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">HTML5</span>
+          <span class="tag">CSS3</span>
+          <span class="tag">Tailwind CSS</span>
+          <span class="tag">Vite</span>
+          <span class="tag">Figma</span>
+
+        </div>
+
+      </div>
+
+
+      <!-- BACKEND -->
+
+      <div class="skill-card">
+
+        <h3>
+          Backend
+        </h3>
+
+        <div class="tag-row">
+
+          <span class="tag">Python</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">Flask</span>
+          <span class="tag">Django</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">Express.js</span>
+          <span class="tag">REST APIs</span>
+          <span class="tag">Socket.IO</span>
+
+        </div>
+
+      </div>
+
+
+      <!-- DATABASE -->
+
+      <div class="skill-card">
+
+        <h3>
+          Databases
+        </h3>
+
+        <div class="tag-row">
+
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">MongoDB</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">Redis</span>
+          <span class="tag">SQL</span>
+
+        </div>
+
+      </div>
+
+
+      <!-- DEVOPS -->
+
+      <div class="skill-card">
+
+        <h3>
+          DevOps & Cloud
+        </h3>
+
+        <div class="tag-row">
+
+          <span class="tag">Docker</span>
+          <span class="tag">AWS EC2</span>
+          <span class="tag">GitHub Actions</span>
+          <span class="tag">Nginx</span>
+          <span class="tag">CICD</span>
+
+        </div>
+
+      </div>
+
+
+      <!-- AI -->
+
+      <div class="skill-card">
+
+        <h3>
+          AI / ML
+        </h3>
+
+        <div class="tag-row">
+
+          <span class="tag">LangGraph</span>
+          <span class="tag">LLM</span>
+          <span class="tag">Groq</span>
+          <span class="tag">scikit-learn</span>
+          <span class="tag">OpenCV</span>
+          <span class="tag">YOLOv5</span>
+          <span class="tag">Hugging Face</span>
+          <span class="tag">Sentence Transformers</span>
+          <span class="tag">OpenAI API</span>
+
+        </div>
+
+      </div>
+
+
+      <!-- LANGUAGES -->
+
+      <div class="skill-card">
+
+        <h3>
+          Languages & Tools
+        </h3>
+
+        <div class="tag-row">
+
+          <span class="tag">Python</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">Java</span>
+          <span class="tag">SQL</span>
+          <span class="tag">PostMan</span>
+
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
+
 </section>
+
+
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
 
 <section id="projects">
-  <div class="container">
-    <div class="section-label">Featured Work</div>
-    <h2 class="section-title">Projects</h2>
-    <p class="section-sub">
-      Production-ready applications built with modern AI, full-stack, backend,
-      automation, and data technologies.
+
+  <div class="wrap">
+
+    <div class="section-head">
+
+      <span class="eyebrow mono">
+        03 — Projects
+      </span>
+
+      <h2>
+        Things I've built
+      </h2>
+
+      <p>
+        Full-stack applications, backend systems, AI-powered platforms,
+        automation workflows, and data-driven applications.
+      </p>
+
+    </div>
+
+
+    <div class="project-list">
+
+
+      <!-- PROJECT 01 -->
+
+      <article class="project">
+
+        <svg
+          class="project-icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          style="color:var(--teal)"
+        >
+          <rect x="3" y="4" width="18" height="16" rx="2"/>
+          <path d="M3 9h18M8 13h3M8 16h6"/>
+        </svg>
+
+
+        <div>
+
+          <div class="project-number">
+            01 / FEATURED
+          </div>
+
+          <div class="project-top">
+
+            <h3>
+              AI Agent Workflow Builder
+            </h3>
+
+          </div>
+
+          <p class="desc">
+            An n8n-style visual AI workflow builder for designing,
+            executing, and monitoring intelligent automation workflows.
+          </p>
+
+          <ul class="project-bullets">
+
+            <li>
+              Built visual workflows with LLM, HTTP, database,
+              conditional, notification, and approval nodes.
+            </li>
+
+            <li>
+              Implemented manual, webhook, scheduled, and
+              database-event triggers with live execution status.
+            </li>
+
+            <li>
+              Integrated Groq API for real-time LLM execution
+              with a modular Node.js/Express backend.
+            </li>
+
+            <li>
+              Added authentication, RBAC, organization management,
+              webhooks, and approval-based pause/resume.
+            </li>
+
+          </ul>
+
+          <div class="tag-row">
+
+            <span class="tag">AI Agents</span>
+            <span class="tag">Workflow Automation</span>
+            <span class="tag">LLM</span>
+            <span class="tag">Groq API</span>
+            <span class="tag">Next.js</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Express</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Hasura</span>
+            <span class="tag">RBAC</span>
+            <span class="tag">REST APIs</span>
+
+          </div>
+
+          <a
+            class="project-link"
+            href="https://github.com/mskmohan50-profile/AI-Agent-Workflow-Builder"
+            target="_blank"
+            rel="noopener"
+          >
+            GitHub →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- PROJECT 02 -->
+
+      <article class="project">
+
+        <svg
+          class="project-icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          style="color:var(--amber)"
+        >
+          <path d="M4 19V6a2 2 0 0 1 2-2h9l5 5v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/>
+          <path d="M14 4v5h5M8 13h8M8 17h5"/>
+        </svg>
+
+
+        <div>
+
+          <div class="project-number">
+            02
+          </div>
+
+          <div class="project-top">
+
+            <h3>
+              AI-Powered Customer Complaint Management System
+            </h3>
+
+          </div>
+
+          <p class="desc">
+            Full-stack QMS application that uses AI agents to analyze
+            pharmaceutical complaint documents and automate
+            quality-management workflows.
+          </p>
+
+          <ul class="project-bullets">
+
+            <li>
+              Built a 7-node LangGraph agent pipeline using Groq LLMs.
+            </li>
+
+            <li>
+              Automated complaint extraction, risk classification,
+              duplicate detection, and CAPA recommendations.
+            </li>
+
+            <li>
+              Implemented real-time auto-save and chat-driven
+              form editing using React and Redux Toolkit.
+            </li>
+
+            <li>
+              Developed FastAPI and SQLAlchemy backend supporting
+              multiple database configurations.
+            </li>
+
+          </ul>
+
+          <div class="tag-row">
+
+            <span class="tag">React</span>
+            <span class="tag">Redux</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">LangGraph</span>
+            <span class="tag">Groq LLM</span>
+            <span class="tag">PostgreSQL</span>
+
+          </div>
+
+          <a
+            class="project-link"
+            href="https://github.com/mskmohan50-profile/Customer-Complaint-Management-System-"
+            target="_blank"
+            rel="noopener"
+          >
+            GitHub →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- PROJECT 03 -->
+
+      <article class="project">
+
+        <svg
+          class="project-icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          style="color:var(--teal)"
+        >
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M12 3a9 9 0 0 1 0 18M3 12h18"/>
+        </svg>
+
+
+        <div>
+
+          <div class="project-number">
+            03
+          </div>
+
+          <h3>
+            Scalable Website Performance Audit Platform
+          </h3>
+
+          <p class="desc">
+            Scalable URL auditing platform for analyzing website
+            performance, SEO, accessibility, security, and modern
+            web best practices.
+          </p>
+
+          <ul class="project-bullets">
+
+            <li>
+              Built REST APIs with validation, rate limiting,
+              caching, and concurrency control.
+            </li>
+
+            <li>
+              Implemented Redis/Node caching, request timeouts,
+              structured logging, and centralized error handling.
+            </li>
+
+            <li>
+              Added automated Jest and Supertest API testing.
+            </li>
+
+            <li>
+              Implemented continuous integration workflows
+              using GitHub Actions.
+            </li>
+
+          </ul>
+
+          <div class="tag-row">
+
+            <span class="tag">React</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Tailwind CSS</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Express.js</span>
+            <span class="tag">Axios</span>
+            <span class="tag">Redis</span>
+            <span class="tag">Jest</span>
+
+          </div>
+
+          <a
+            class="project-link"
+            href="https://github.com/mskmohan50-profile/Page-Pulse"
+            target="_blank"
+            rel="noopener"
+          >
+            GitHub →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- PROJECT 04 -->
+
+      <article class="project">
+
+        <svg
+          class="project-icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          style="color:var(--amber)"
+        >
+          <rect x="3" y="3" width="7" height="7" rx="1"/>
+          <rect x="14" y="3" width="7" height="7" rx="1"/>
+          <rect x="3" y="14" width="7" height="7" rx="1"/>
+          <rect x="14" y="14" width="7" height="7" rx="1"/>
+        </svg>
+
+
+        <div>
+
+          <div class="project-number">
+            04
+          </div>
+
+          <h3>
+            Manufacturing Quality Intelligence Dashboard
+          </h3>
+
+          <p class="desc">
+            Full-stack analytics dashboard for manufacturing quality
+            monitoring, KPI analysis, defect tracking, and
+            data-driven insights.
+          </p>
+
+          <ul class="project-bullets">
+
+            <li>
+              Implemented JWT authentication and ownership-scoped
+              REST APIs.
+            </li>
+
+            <li>
+              Added CSV and Excel data ingestion using PapaParse
+              and SheetJS.
+            </li>
+
+            <li>
+              Built KPI dashboards and defect/trend visualizations
+              with Recharts.
+            </li>
+
+            <li>
+              Added CSV/PDF export, append-only audit logging,
+              and data-quality scoring.
+            </li>
+
+          </ul>
+
+          <div class="tag-row">
+
+            <span class="tag">React</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Express</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">JWT</span>
+            <span class="tag">Recharts</span>
+            <span class="tag">SheetJS</span>
+
+          </div>
+
+          <a
+            class="project-link"
+            href="https://github.com/mskmohan50-profile/manufacturing-quality-intelligence"
+            target="_blank"
+            rel="noopener"
+          >
+            GitHub →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- PROJECT 05 -->
+
+      <article class="project">
+
+        <svg
+          class="project-icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          style="color:var(--teal)"
+        >
+          <circle cx="12" cy="8" r="4"/>
+          <path d="M5 21a7 7 0 0 1 14 0"/>
+          <path d="M17 4l3 3-3 3"/>
+        </svg>
+
+
+        <div>
+
+          <div class="project-number">
+            05
+          </div>
+
+          <h3>
+            Role-Based Authentication & User Management System
+          </h3>
+
+          <p class="desc">
+            Full-stack authentication and user-management application
+            with secure protected routes and role-based access control.
+          </p>
+
+          <ul class="project-bullets">
+
+            <li>
+              Implemented secure authentication and protected
+              application routes.
+            </li>
+
+            <li>
+              Built role-based access control for different
+              user permissions.
+            </li>
+
+            <li>
+              Created reusable React components and custom hooks.
+            </li>
+
+            <li>
+              Developed REST APIs using Node.js and Express.js.
+            </li>
+
+          </ul>
+
+          <div class="tag-row">
+
+            <span class="tag">React</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Express.js</span>
+            <span class="tag">REST API</span>
+            <span class="tag">RBAC</span>
+
+          </div>
+
+          <a
+            class="project-link"
+            href="https://github.com/mskmohan50-profile/Role-Based-Authentication-User-Management-System"
+            target="_blank"
+            rel="noopener"
+          >
+            GitHub →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- PROJECT 06 -->
+
+      <article class="project">
+
+        <svg
+          class="project-icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          style="color:var(--amber)"
+        >
+          <rect x="3" y="4" width="18" height="16" rx="2"/>
+          <path d="M7 8h10M7 12h5M7 16h7"/>
+        </svg>
+
+
+        <div>
+
+          <div class="project-number">
+            06
+          </div>
+
+          <h3>
+            Smart Expense Tracker API
+          </h3>
+
+          <p class="desc">
+            FastAPI-based REST API for managing personal expenses
+            with validation, filtering, summaries, and automated testing.
+          </p>
+
+          <ul class="project-bullets">
+
+            <li>
+              Implemented complete CRUD operations for expense management.
+            </li>
+
+            <li>
+              Added category filtering, total calculations,
+              and monthly summaries.
+            </li>
+
+            <li>
+              Implemented Pydantic request and response validation.
+            </li>
+
+            <li>
+              Added automated API testing using Pytest and HTTPX.
+            </li>
+
+          </ul>
+
+          <div class="tag-row">
+
+            <span class="tag">Python</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">Pydantic</span>
+            <span class="tag">Uvicorn</span>
+            <span class="tag">Pytest</span>
+            <span class="tag">HTTPX</span>
+            <span class="tag">JSON</span>
+
+          </div>
+
+          <a
+            class="project-link"
+            href="https://github.com/mskmohan50-profile/Smart-Expense-Tracker-API"
+            target="_blank"
+            rel="noopener"
+          >
+            GitHub →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- PROJECT 07 -->
+
+      <article class="project">
+
+        <svg
+          class="project-icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          style="color:var(--teal)"
+        >
+          <path d="M12 3a9 9 0 1 0 9 9"/>
+          <path d="M12 3v6l4 2"/>
+          <path d="M16 5h5v5"/>
+        </svg>
+
+
+        <div>
+
+          <div class="project-number">
+            07
+          </div>
+
+          <h3>
+            SafeChat – AI-Powered Response Safety Platform
+          </h3>
+
+          <p class="desc">
+            Multi-LLM chatbot designed to analyze prompt risks,
+            detect jailbreak attempts, classify response safety,
+            and dynamically select AI models.
+          </p>
+
+          <ul class="project-bullets">
+
+            <li>
+              Built a multi-LLM conversational platform with
+              safety analysis.
+            </li>
+
+            <li>
+              Implemented prompt risk analysis and jailbreak detection.
+            </li>
+
+            <li>
+              Added response safety classification using
+              machine-learning models.
+            </li>
+
+            <li>
+              Integrated Hugging Face models and
+              sentence-transformer embeddings.
+            </li>
+
+          </ul>
+
+          <div class="tag-row">
+
+            <span class="tag">Python</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">Gradio</span>
+            <span class="tag">Hugging Face</span>
+            <span class="tag">Sentence Transformers</span>
+            <span class="tag">LightGBM</span>
+            <span class="tag">NumPy</span>
+
+          </div>
+
+          <a
+            class="project-link"
+            href="https://github.com/mskmohan50-profile/AI-Powered-Response-Safety-Platform"
+            target="_blank"
+            rel="noopener"
+          >
+            GitHub →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- PROJECT 08 -->
+
+      <article class="project">
+
+        <svg
+          class="project-icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          style="color:var(--amber)"
+        >
+          <path d="M4 5h16v14H4z"/>
+          <path d="M8 9h8M8 13h8M8 17h4"/>
+        </svg>
+
+
+         <div>
+
+    <div class="project-number">
+      08
+    </div>
+
+    <div class="project-top">
+
+      <h3>
+        DevPilot AI — Autonomous Full-Stack AI Software Engineer
+      </h3>
+
+    </div>
+
+    <p class="desc">
+      An autonomous, end-to-end AI software engineering platform that
+      transforms high-level natural-language requirements into complete
+      applications through an agentic software-development workflow.
     </p>
 
-    <div class="projects-grid">
+    <ul class="project-bullets">
 
-      <!-- 01 -->
-      <div class="proj-card proj-highlight">
-        <div class="proj-num">01 / Featured</div>
-        <div class="proj-title">AI Agent Workflow Builder</div>
+      <li>
+        Converts natural-language requirements into software architecture,
+        frontend, backend, and database implementations.
+      </li>
 
-        <div class="proj-desc">
-          An n8n-style visual AI workflow builder for designing, executing,
-          and monitoring intelligent automation workflows.
-        </div>
+      <li>
+        Uses specialized agents for requirements analysis, architecture,
+        code generation, testing, debugging, fixing, and code review.
+      </li>
 
-        <ul class="proj-bullets">
-          <li>Built visual workflows with LLM, HTTP, database, conditional, notification, and approval nodes</li>
-          <li>Implemented manual, webhook, scheduled, and database-event triggers with live execution status</li>
-          <li>Integrated Groq API for real-time LLM execution with a modular Node.js/Express backend</li>
-          <li>Added authentication, RBAC, organization management, webhooks, and approval-based pause/resume</li>
-        </ul>
+      <li>
+        Implements a self-healing test → debug → fix → retest loop for
+        automatically analyzing and repairing application failures.
+      </li>
 
-        <div class="proj-stack">
-          <span class="proj-tech">AI Agents</span>
-          <span class="proj-tech">Workflow Automation</span>
-          <span class="proj-tech">LLM</span>
-          <span class="proj-tech">Groq API</span>
-          <span class="proj-tech">Next.js</span>
-          <span class="proj-tech">TypeScript</span>
-          <span class="proj-tech">Node.js</span>
-          <span class="proj-tech">Express</span>
-          <span class="proj-tech">PostgreSQL</span>
-          <span class="proj-tech">Hasura</span>
-          <span class="proj-tech">RBAC</span>
-          <span class="proj-tech">REST APIs</span>
-        </div>
+      <li>
+        Generates automated tests, performs AI root-cause analysis,
+        and produces code-quality, security, and project-health reports.
+      </li>
 
-        <a href="https://github.com/mskmohan50-profile/AI-Agent-Workflow-Builder"
-           target="_blank"
-           class="proj-link">
-          GitHub →
-        </a>
-      </div>
+      <li>
+        Maintains project context and development memory throughout
+        the agentic software-engineering workflow.
+      </li>
 
+    </ul>
 
-      <!-- 02 -->
-      <div class="proj-card">
-        <div class="proj-num">02</div>
-        <div class="proj-title">AI-Powered Customer Complaint Management System</div>
+    <div class="tag-row">
 
-        <div class="proj-desc">
-          Full-stack QMS application that uses AI agents to analyze pharmaceutical
-          complaint documents and automate quality-management workflows.
-        </div>
-
-        <ul class="proj-bullets">
-          <li>Built a 7-node LangGraph agent pipeline using Groq LLMs</li>
-          <li>Automated complaint extraction, risk classification, duplicate detection, and CAPA recommendations</li>
-          <li>Implemented real-time auto-save and chat-driven form editing using React and Redux Toolkit</li>
-          <li>Developed FastAPI and SQLAlchemy backend supporting multiple database configurations</li>
-        </ul>
-
-        <div class="proj-stack">
-          <span class="proj-tech">React</span>
-          <span class="proj-tech">Redux</span>
-          <span class="proj-tech">TypeScript</span>
-          <span class="proj-tech">FastAPI</span>
-          <span class="proj-tech">LangGraph</span>
-          <span class="proj-tech">Groq LLM</span>
-          <span class="proj-tech">PostgreSQL</span>
-        </div>
-
-        <a href="https://github.com/mskmohan50-profile/Customer-Complaint-Management-System-"
-           target="_blank"
-           class="proj-link">
-          GitHub →
-        </a>
-      </div>
-
-
-      <!-- 03 -->
-      <div class="proj-card">
-        <div class="proj-num">03</div>
-        <div class="proj-title">Scalable Website Performance Audit Platform</div>
-
-        <div class="proj-desc">
-          Scalable URL auditing platform for analyzing website performance,
-          SEO, accessibility, security, and modern web best practices.
-        </div>
-
-        <ul class="proj-bullets">
-          <li>Built REST APIs with validation, rate limiting, caching, and concurrency control</li>
-          <li>Implemented Redis/Node caching, request timeouts, structured logging, and centralized error handling</li>
-          <li>Added automated Jest and Supertest API testing</li>
-          <li>Implemented continuous integration workflows using GitHub Actions</li>
-        </ul>
-
-        <div class="proj-stack">
-          <span class="proj-tech">React</span>
-          <span class="proj-tech">TypeScript</span>
-          <span class="proj-tech">Tailwind CSS</span>
-          <span class="proj-tech">Node.js</span>
-          <span class="proj-tech">Express.js</span>
-          <span class="proj-tech">Axios</span>
-          <span class="proj-tech">Redis</span>
-          <span class="proj-tech">Jest</span>
-        </div>
-
-        <a href="https://github.com/mskmohan50-profile/Page-Pulse"
-           target="_blank"
-           class="proj-link">
-          GitHub →
-        </a>
-      </div>
-
-
-      <!-- 04 -->
-      <div class="proj-card">
-        <div class="proj-num">04</div>
-        <div class="proj-title">Manufacturing Quality Intelligence Dashboard</div>
-
-        <div class="proj-desc">
-          Full-stack analytics dashboard for manufacturing quality monitoring,
-          KPI analysis, defect tracking, and data-driven insights.
-        </div>
-
-        <ul class="proj-bullets">
-          <li>Implemented JWT authentication and ownership-scoped REST APIs</li>
-          <li>Added CSV and Excel data ingestion using PapaParse and SheetJS</li>
-          <li>Built KPI dashboards and defect/trend visualizations with Recharts</li>
-          <li>Added CSV/PDF export, append-only audit logging, and data-quality scoring</li>
-        </ul>
-
-        <div class="proj-stack">
-          <span class="proj-tech">React</span>
-          <span class="proj-tech">TypeScript</span>
-          <span class="proj-tech">Express</span>
-          <span class="proj-tech">MongoDB</span>
-          <span class="proj-tech">JWT</span>
-          <span class="proj-tech">Recharts</span>
-          <span class="proj-tech">SheetJS</span>
-        </div>
-
-        <a href="https://github.com/mskmohan50-profile/manufacturing-quality-intelligence"
-           target="_blank"
-           class="proj-link">
-          GitHub →
-        </a>
-      </div>
-
-
-      <!-- 05 -->
-      <div class="proj-card">
-        <div class="proj-num">05</div>
-        <div class="proj-title">Role-Based Authentication & User Management System</div>
-
-        <div class="proj-desc">
-          Full-stack authentication and user-management application with
-          secure protected routes and role-based access control.
-        </div>
-
-        <ul class="proj-bullets">
-          <li>Implemented secure authentication and protected application routes</li>
-          <li>Built role-based access control for different user permissions</li>
-          <li>Created reusable React components and custom hooks</li>
-          <li>Developed REST APIs using Node.js and Express.js</li>
-        </ul>
-
-        <div class="proj-stack">
-          <span class="proj-tech">React</span>
-          <span class="proj-tech">TypeScript</span>
-          <span class="proj-tech">Node.js</span>
-          <span class="proj-tech">Express.js</span>
-          <span class="proj-tech">REST API</span>
-          <span class="proj-tech">RBAC</span>
-        </div>
-
-        <a href="https://github.com/mskmohan50-profile/Role-Based-Authentication-User-Management-System"
-           target="_blank"
-           class="proj-link">
-          GitHub →
-        </a>
-      </div>
-
-
-      <!-- 06 -->
-      <div class="proj-card">
-        <div class="proj-num">06</div>
-        <div class="proj-title">Smart Expense Tracker API</div>
-
-        <div class="proj-desc">
-          FastAPI-based REST API for managing personal expenses with
-          validation, filtering, summaries, and automated testing.
-        </div>
-
-        <ul class="proj-bullets">
-          <li>Implemented complete CRUD operations for expense management</li>
-          <li>Added category filtering, total calculations, and monthly summaries</li>
-          <li>Implemented Pydantic request and response validation</li>
-          <li>Added automated API testing using Pytest and HTTPX</li>
-        </ul>
-
-        <div class="proj-stack">
-          <span class="proj-tech">Python</span>
-          <span class="proj-tech">FastAPI</span>
-          <span class="proj-tech">Pydantic</span>
-          <span class="proj-tech">Uvicorn</span>
-          <span class="proj-tech">Pytest</span>
-          <span class="proj-tech">HTTPX</span>
-          <span class="proj-tech">JSON</span>
-        </div>
-
-        <a href="https://github.com/mskmohan50-profile/Smart-Expense-Tracker-API"
-           target="_blank"
-           class="proj-link">
-          GitHub →
-        </a>
-      </div>
-
-
-      <!-- 07 -->
-      <div class="proj-card">
-        <div class="proj-num">07</div>
-        <div class="proj-title">SafeChat – AI-Powered Response Safety Platform</div>
-
-        <div class="proj-desc">
-          Multi-LLM chatbot designed to analyze prompt risks, detect jailbreak
-          attempts, classify response safety, and dynamically select AI models.
-        </div>
-
-        <ul class="proj-bullets">
-          <li>Built a multi-LLM conversational platform with safety analysis</li>
-          <li>Implemented prompt risk analysis and jailbreak detection</li>
-          <li>Added response safety classification using machine-learning models</li>
-          <li>Integrated Hugging Face models and sentence-transformer embeddings</li>
-        </ul>
-
-        <div class="proj-stack">
-          <span class="proj-tech">Python</span>
-          <span class="proj-tech">FastAPI</span>
-          <span class="proj-tech">Gradio</span>
-          <span class="proj-tech">Hugging Face</span>
-          <span class="proj-tech">Sentence Transformers</span>
-          <span class="proj-tech">LightGBM</span>
-          <span class="proj-tech">NumPy</span>
-        </div>
-
-        <a href="https://github.com/mskmohan50-profile/AI-Powered-Response-Safety-Platform"
-           target="_blank"
-           class="proj-link">
-          GitHub →
-        </a>
-      </div>
-
-
-      <!-- 08 -->
-      <div class="proj-card">
-        <div class="proj-num">08</div>
-        <div class="proj-title">Online Voting System</div>
-
-        <div class="proj-desc">
-          Secure online voting platform with authentication, audit trails,
-          protected APIs, election management, and real-time result dashboards.
-        </div>
-
-        <ul class="proj-bullets">
-          <li>Implemented secure authentication and JWT-protected APIs</li>
-          <li>Added cryptographic hashing for tamper-resistant vote records</li>
-          <li>Built real-time election results using Chart.js</li>
-          <li>Added admin election management, rate limiting, Docker, and Nginx deployment</li>
-        </ul>
-
-        <div class="proj-stack">
-          <span class="proj-tech">Python</span>
-          <span class="proj-tech">React.js</span>
-          <span class="proj-tech">Node.js</span>
-          <span class="proj-tech">PostgreSQL</span>
-          <span class="proj-tech">JWT</span>
-          <span class="proj-tech">Docker</span>
-          <span class="proj-tech">Nginx</span>
-        </div>
-
-        <a href="https://github.com/mskmohan50-profile"
-           target="_blank"
-           class="proj-link">
-          GitHub →
-        </a>
-      </div>
+      <span class="tag">AI Agents</span>
+      <span class="tag">Gemini API</span>
+      <span class="tag">Multi-Agent Workflow</span>
+      <span class="tag">React 18</span>
+      <span class="tag">TypeScript</span>
+      <span class="tag">Vite</span>
+      <span class="tag">Tailwind CSS</span>
+      <span class="tag">Python</span>
+      <span class="tag">FastAPI</span>
+      <span class="tag">SQLAlchemy</span>
+      <span class="tag">Node.js</span>
+      <span class="tag">PostgreSQL</span>
+      <span class="tag">JWT</span>
+      <span class="tag">Docker</span>
 
     </div>
+
+    <a
+      class="project-link"
+      href="https://github.com/mskmohan50-profile/DevPilot-AI"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      GitHub →
+    </a>
+
   </div>
+      </article>
+
+    </div>
+
+  </div>
+
 </section>
+
+
+<!-- =====================================================
+     EXPERIENCE
+===================================================== -->
 
 <section id="experience">
-  <div class="container">
-    <div class="section-label">Work History</div>
-    <h2 class="section-title"></h2>
-    <p class="section-sub">Real-world experience building production software and shipping features that reached actual users.</p>
+
+  <div class="wrap">
+
+    <div class="section-head">
+
+      <span class="eyebrow mono">
+        04 — Experience
+      </span>
+
+      <h2>
+        Work history
+      </h2>
+
+      <p>
+        Internship experience across full-stack development
+        and AI/ML project development.
+      </p>
+
+    </div>
+
+
     <div class="timeline">
-      <div class="exp-item">
-        <div class="exp-dot"></div>
-        <div class="exp-meta">Bangalore · Internship</div>
-        <div class="exp-role">Software Developer Intern</div>
-        <div class="exp-company">Atlys WorkForce Technologies</div>
-        <ul class="exp-bullets">
-          <li>Built responsive full-stack application using React.js, Flask, and PostgreSQL, delivering scalable and maintainable software solutions</li>
-          <li>Created and integrated REST APIs for data management and service communication, improving development efficiency</li>
-          <li>Participated in code reviews, testing, and performance optimisation, contributing to high-quality software releases</li>
-        </ul>
+
+
+      <!-- EXPERIENCE 01 -->
+
+      <div class="experience-item">
+
+        <div class="experience-meta">
+          BANGALORE · INTERNSHIP
         </div>
-        <div class="exp-item">
-        <div class="exp-dot"></div>
 
-        <div class="exp-meta">Coimbatore · Internship</div>
-        <div class="exp-role">AI/ML Engineer Intern</div>
-        <div class="exp-company">Project Development Cell</div>
+        <div class="experience-role">
+          Software Developer Intern
+        </div>
 
-        <ul class="exp-bullets">
-          <li>Developed and implemented machine learning models for real-world project requirements using Python and modern AI/ML libraries</li>
-          <li>Performed data preprocessing, feature engineering, model training, and evaluation to improve prediction accuracy and reliability</li>
-          <li>Integrated AI/ML solutions into application workflows and collaborated on testing, debugging, and performance optimisation</li>
+        <div class="experience-company">
+          Atlys WorkForce Technologies
+        </div>
+
+        <ul class="experience-bullets">
+
+          <li>
+            Built responsive full-stack applications using
+            React.js, Flask, and PostgreSQL.
+          </li>
+
+          <li>
+            Created and integrated REST APIs for data management
+            and service communication.
+          </li>
+
+          <li>
+            Participated in code reviews, testing, and
+            performance optimisation.
+          </li>
+
+          <li>
+            Contributed to maintainable software solutions
+            and high-quality development practices.
+          </li>
+
         </ul>
-        
+
       </div>
-    </div>
+      <div class="experience-item">
+
+  <div class="experience-meta">
+    INDIA · INTERNSHIP
   </div>
+
+  <div class="experience-role">
+    Full-Stack Development Intern
+  </div>
+
+  <div class="experience-company">
+    CodeAlpha
+  </div>
+
+  <ul class="experience-bullets">
+
+    <li>
+      Developed full-stack web applications using React.js,
+      Node.js, Express.js, and MongoDB.
+    </li>
+
+    <li>
+      Built responsive user interfaces and integrated
+      REST APIs for frontend-backend communication.
+    </li>
+
+    <li>
+      Implemented CRUD operations, authentication, and
+      database-driven application features.
+    </li>
+
+    <li>
+      Used Git and GitHub for version control, project
+      development, and code management.
+    </li>
+
+  </ul>
+
+</div>
+
+
+      <!-- EXPERIENCE 02 -->
+
+      <div class="experience-item">
+
+        <div class="experience-meta">
+          COIMBATORE · INTERNSHIP
+        </div>
+
+        <div class="experience-role">
+          AI/ML Engineer Intern
+        </div>
+
+        <div class="experience-company">
+          Project Development Cell
+        </div>
+
+        <ul class="experience-bullets">
+
+          <li>
+            Developed and implemented machine learning models
+            for real-world project requirements using Python
+            and modern AI/ML libraries.
+          </li>
+
+          <li>
+            Performed data preprocessing, feature engineering,
+            model training, and evaluation.
+          </li>
+
+          <li>
+            Integrated AI/ML solutions into application workflows.
+          </li>
+
+          <li>
+            Collaborated on testing, debugging, and
+            performance optimisation.
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
+
+
+<!-- =====================================================
+     CERTIFICATIONS
+===================================================== -->
+
 <section id="certifications">
-  <div class="container">
-    <div class="section-label">Recognition</div>
-    <h2 class="section-title">Certifications & Awards</h2>
-    <p class="section-sub">Training, events, and achievements beyond the classroom.</p>
-    <div class="certs-grid">
-      <div class="cert-card"><div class="cert-title">Technical Symposium</div><div class="cert-issuer">Sankara Engineering College</div></div>
-      <div class="cert-card"><div class="cert-title">AI/ML & Full Stack Development Training</div><div class="cert-issuer">Project Development Cell · CIT</div></div>
-      <div class="cert-card"><div class="cert-title">Full-Stack Development</div><div class="cert-issuer">Atlysbridge Solutions · Industry Training</div></div></div>
+
+  <div class="wrap">
+
+    <div class="section-head">
+
+      <span class="eyebrow mono">
+        05 — Recognition
+      </span>
+
+      <h2>
+        Certifications & Awards
+      </h2>
+
+      <p>
+        Training, technical events, and achievements
+        beyond the classroom.
+      </p>
+
     </div>
+
+
+    <div class="cert-grid">
+
+
+      <div class="cert-card">
+
+        <div class="cert-title">
+          Technical Symposium
+        </div>
+
+        <div class="cert-issuer">
+          Sankara Engineering College
+        </div>
+
+      </div>
+
+
+      <div class="cert-card">
+
+        <div class="cert-title">
+          AI/ML & Full Stack Development Training
+        </div>
+
+        <div class="cert-issuer">
+          Project Development Cell · CIT
+        </div>
+
+      </div>
+
+
+      <div class="cert-card">
+
+        <div class="cert-title">
+          Frontier Engineering Challenge
+        </div>
+
+        <div class="cert-issuer">
+          Micro 1
+        </div>
+      </div>
+    
+      <div class="cert-card">
+
+        <div class="cert-title">
+          Build Sprint 2026
+        </div>
+        <div class="cert-issuer">
+          Latent Force
+        </div>
+       </div>
+    <div class="cert-card">
+
+        <div class="cert-title">
+          Machine Learning
+        </div>
+        <div class="cert-issuer">
+          Sri Regeswara Collage
+        </div>
+      </div>
+    </div>
+
+
+    <div class="resume-box">
+
+      <p>
+        Download my latest resume for a complete overview
+        of my skills, education, projects, and experience.
+      </p>
+
+      <a
+        class="resume-btn"
+        href="./Mohan%20Raj%20G.pdf"
+        download="Mohan Raj G.pdf"
+      >
+        ↓ Download Resume
+      </a>
+
+    </div>
+
   </div>
 
 </section>
-<section id="contact" style="border-bottom:none">
-  <div class="container">
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section id="contact">
+
+  <div class="wrap">
+
+    <div class="section-head">
+
+      <span class="eyebrow mono">
+        06 — Contact
+      </span>
+
+      <h2>
+        Get in touch
+      </h2>
+
+      <p>
+        Open to full-time software engineering roles,
+        internships, and freelance projects.
+      </p>
+
+    </div>
+
+
     <div class="contact-grid">
-      <div>
-        <div class="section-label">Get In Touch</div>
-        <p style="color:var(--muted);font-size:.94rem">Open to full-time software engineering roles, internships, and freelance projects. If you're building something interesting, I'd love to hear about it.</p>
-        <div class="contact-links">
-          <a href="mailto:mskmohan50@gmail.com" class="contact-link"><div class="contact-link-text"><strong>Email</strong><span>mskmohan50@gmail.com</span></div></a>
-          <a href="https://linkedin.com/in/mohan-raj-g-6670b7299" target="_blank" class="contact-link"><div class="contact-link-text"><strong>LinkedIn</strong><span>mohan-raj-g-6670b7299</span></div></a>
-          <a href="https://github.com/mskmohan50-profile" target="_blank" class="contact-link"><div class="contact-link-text"><strong>GitHub</strong><span>mskmohan50-profile</span></div></a>
-          <a href="tel:+918668086306" class="contact-link"><div class="contact-link-text"><strong>Phone</strong><span>+91 86680 86306</span></div></a>
+
+
+      <!-- EMAIL -->
+
+      <div class="contact-card">
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+        >
+          <path d="M22 6l-10 7L2 6"/>
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+        </svg>
+
+        <div>
+
+          <div class="label">
+            Email
+          </div>
+
+          <div class="value">
+
+            <a href="mailto:mskmohan50@gmail.com">
+              mskmohan50@gmail.com
+            </a>
+
+          </div>
+
         </div>
+
       </div>
-      <div>
-        <div class="contact-form" id="contactForm">
-          <div>
-            <label class="form-label">Your Name</label>
-            <input type="text" class="form-input" id="cName" placeholder="Jane Smith"/>
+
+
+      <!-- LINKEDIN -->
+
+      <div class="contact-card">
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+        >
+          <rect x="2" y="2" width="20" height="20" rx="3"/>
+          <path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 13v4"/>
+        </svg>
+
+        <div>
+
+          <div class="label">
+            LinkedIn
           </div>
-          <div>
-            <label class="form-label">Email</label>
-            <input type="email" class="form-input" id="cEmail" placeholder="jane@company.com"/>
+
+          <div class="value">
+
+            <a
+              href="https://www.linkedin.com/in/mohan-raj-g-6670b7299"
+              target="_blank"
+              rel="noopener"
+            >
+              linkedin.com/in/mohan-raj-g-6670b7299
+            </a>
+
           </div>
-          <div>
-            <label class="form-label">Message</label>
-            <textarea class="form-textarea" id="cMsg" placeholder="Tell me about the role or project..."></textarea>
-          </div>
-          <button class="form-btn" id="sendBtn">Send Message</button>
-          <div class="form-success" id="formSuccess">Message sent! I'll get back to you within 24 hours.</div>
+
         </div>
+
       </div>
+
+
+      <!-- GITHUB -->
+
+      <div class="contact-card">
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+        >
+          <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.68c-2.78.6-3.37-1.18-3.37-1.18-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.35 1.09 2.92.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 7.65c.85 0 1.7.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.85-2.34 4.7-4.57 4.95.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/>
+        </svg>
+
+        <div>
+
+          <div class="label">
+            GitHub
+          </div>
+
+          <div class="value">
+
+            <a
+              href="https://github.com/mskmohan50-profile"
+              target="_blank"
+              rel="noopener"
+            >
+              github.com/mskmohan50-profile
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- PHONE -->
+
+      <div class="contact-card">
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+        >
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.1 5.18 2 2 0 0 1 5.11 3h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L9 10.73a16 16 0 0 0 4.27 4.27l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92Z"/>
+        </svg>
+
+        <div>
+
+          <div class="label">
+            Phone
+          </div>
+
+          <div class="value">
+
+            <a href="tel:+918668086306">
+              +91 86680 86306
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- LOCATION -->
+
+      <div class="contact-card">
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+        >
+          <path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 1 1 18 0Z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+
+        <div>
+
+          <div class="label">
+            Location
+          </div>
+
+          <div class="value">
+            Trichy, Tamil Nadu · Open to relocation
+          </div>
+
+        </div>
+
+      </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
+
   </div>
+
 </section>
 
-<footer>
-  <div class="container">
-    Designed & built by <strong>Mohan Raj G</strong> · mskmohan50@gmail.com · Trichy, Tamil Nadu
-  </div>
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="wrap">
+
+  <span class="mono">
+    © 2026 Mohan Raj G
+  </span>
+
+  <span>
+    Python · React · FastAPI · Node.js · AI
+  </span>
+
 </footer>
 
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
 <script>
-document.getElementById('menuToggle').addEventListener('click',()=>{
-  document.getElementById('navLinks').classList.toggle('open');
+
+const menuBtn = document.getElementById("menuBtn");
+
+const mobileMenu = document.getElementById("mobileMenu");
+
+
+/* Mobile menu */
+
+menuBtn.addEventListener("click", () => {
+
+  const open = mobileMenu.classList.toggle("open");
+
+  menuBtn.setAttribute(
+    "aria-expanded",
+    String(open)
+  );
+
 });
-document.querySelectorAll('.nav-links a').forEach(a=>{
-  a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open'));
-});
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click',e=>{
-    const target=document.querySelector(a.getAttribute('href'));
-    if(target){e.preventDefault();window.scrollTo({top:target.offsetTop-64,behavior:'smooth'});}
+
+
+/* Close mobile menu after navigation */
+
+mobileMenu
+  .querySelectorAll("a")
+  .forEach((link) => {
+
+    link.addEventListener("click", () => {
+
+      mobileMenu.classList.remove("open");
+
+      menuBtn.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
+    });
+
   });
-});
-document.getElementById('sendBtn').addEventListener('click',()=>{
-  const n=document.getElementById('cName').value.trim();
-  const e=document.getElementById('cEmail').value.trim();
-  const m=document.getElementById('cMsg').value.trim();
-  if(!n||!e||!m){return;}
-  const btn=document.getElementById('sendBtn');
-  btn.textContent='Sending...';btn.disabled=true;
-  setTimeout(()=>{
-    document.getElementById('contactForm').style.display='none';
-    document.getElementById('formSuccess').style.display='block';
-  },800);
-});
+
+
+/* Smooth scroll */
+
+document
+  .querySelectorAll('a[href^="#"]')
+  .forEach((link) => {
+
+    link.addEventListener("click", (event) => {
+
+      const targetId =
+        link.getAttribute("href");
+
+      const target =
+        document.querySelector(targetId);
+
+      if (!target) return;
+
+      event.preventDefault();
+
+      const header =
+        document.querySelector("header.site");
+
+      const headerHeight =
+        header ? header.offsetHeight : 0;
+
+      const targetPosition =
+        target.getBoundingClientRect().top +
+        window.scrollY -
+        headerHeight -
+        10;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth"
+      });
+
+    });
+
+  });
+
 </script>
+
 </body>
 </html>
